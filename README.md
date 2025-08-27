@@ -6,7 +6,6 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
 
 ## Overview
 
@@ -20,12 +19,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./design/image.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github Repo](https://github.com/OungHongly/Summary-Result-Component.git)
 
 ## My process
 
@@ -34,6 +32,4 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
-
-### What I learned
+- Javascript

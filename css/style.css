@@ -2,7 +2,7 @@
   /* FONT SIZE : Scale= 16 x1.25 */
   --text-sm: 1.4rem; /* 1.28rem*/
   --text-link: 1.6rem; /* 1.4rem */
-  --text-paragraph: 1.8rem; /* 1.6rem */
+  --text-paragraph: 1.6rem; /* 1.6rem */
   --text-h6: 2.3rem;
   --text-h5: 2.5rem;
   --text-h4: 3.125rem;
@@ -44,14 +44,24 @@
   /* Primary */
 
   --Light-red: hsl(0, 100%, 67%);
+  --Light-red-10: hsla(0, 100%, 67%, 0.06);
+
   --Orangey-yellow: hsl(39, 100%, 56%);
+  --Orangey-yellow-10: hsla(39, 100%, 56%, 0.06);
   --Green-teal: hsl(166, 100%, 37%);
+  --Green-teal-10: hsla(166, 100%, 37%, 0.06);
+
   --Cobalt-blue: hsl(234, 85%, 45%);
+  --Cobalt-blue-10: hsla(234, 85%, 45%, 0.06);
 
   /* Gradients */
 
   --Light-slate-blue-bg: hsl(252, 100%, 67%);
   --Light-royal-blue-bg: hsl(241, 81%, 54%);
+  --blue-bg-gradient: linear-gradient(
+    var(--Light-slate-blue-bg),
+    var(--Light-royal-blue-bg)
+  );
 
   --Violet-blue-cl: hsla(256, 72%, 46%, 1);
   --Persian-blue-cl: hsla(241, 72%, 46%, 0);
@@ -62,6 +72,7 @@
   --Pale-blue: hsl(221, 100%, 96%);
   --Light-lavender: hsl(241, 100%, 89%);
   --Dark-gray-blue: hsl(224, 30%, 27%);
+  --light-gray-blue: hsl(223, 15%, 76%);
 }
 * {
   box-sizing: border-box;
@@ -78,7 +89,7 @@ html {
 
 body {
   font-family: var(--ff-body);
-  font-weight: var(--fw-normal);
+  /* font-weight: var(--fw-500); */
   line-height: var(--line-height-normal);
   color: var(--Dark-gray-blue);
 }
@@ -142,5 +153,167 @@ span {
 /* === styling layout ==== */
 
 .container {
-  max-width: 1200px;
+  min-height: 100vh;
+  background-color: var(--Pale-blue);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.summary-card {
+  display: flex;
+  max-width: 550px;
+  background-color: var(--White);
+
+  border-radius: var(--space-md);
+  overflow: hidden;
+  gap: var(--space-md);
+}
+.result,
+.summary {
+  flex: 1;
+}
+
+/* Result side */
+.result {
+  background-image: var(--blue-bg-gradient);
+  border-radius: var(--space-md);
+  padding: var(--space-ml);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  color: var(--Light-lavender);
+}
+.result-wrapper {
+  width: 135px;
+  height: 135px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-image: linear-gradient(
+    var(--Violet-blue-cl),
+    var(--Persian-blue-cl)
+  );
+  margin-bottom: var(--space-md);
+}
+.head {
+  font-weight: var(--fw-bold);
+  font-size: 1.8rem;
+}
+.result-head {
+  margin-bottom: var(--space-ml);
+}
+.avg-result {
+  font-size: var(--text-h2);
+  color: var(--White);
+  font-weight: var(--fw-800);
+
+  margin-bottom: 0;
+}
+.result--status {
+  font-weight: var(--fw-bold);
+  color: white;
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* Summary side */
+.summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: var(--space-ml);
+}
+
+.group-subject {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-ms);
+  font-weight: var(--fw-500);
+}
+.test-subject {
+  display: flex;
+  justify-content: space-between;
+
+  padding: var(--space-sm);
+  border-radius: var(--space-ms);
+}
+.subject {
+  display: flex;
+  align-items: center;
+  gap: var(--space-ms);
+}
+
+.score {
+  color: var(--light-gray-blue);
+  font-weight: var(--fw-bold);
+}
+
+/* Reaction */
+.reaction {
+  background-color: var(--Light-red-10);
+}
+.reaction-title {
+  color: var(--Light-red);
+}
+#reaction--score {
+  color: var(--Dark-gray-blue);
+}
+
+/* Memory */
+.memory {
+  background-color: var(--Orangey-yellow-10);
+}
+.memory-title {
+  color: var(--Orangey-yellow);
+}
+#memory--score {
+  color: var(--Dark-gray-blue);
+}
+
+/* Verbal */
+.verbal {
+  background-color: var(--Green-teal-10);
+}
+.verbal-title {
+  color: var(--Green-teal);
+}
+#verbal--score {
+  color: var(--Dark-gray-blue);
+}
+
+/* Visual */
+.visual {
+  background-color: var(--Cobalt-blue-10);
+}
+.visual-title {
+  color: var(--Cobalt-blue);
+}
+#visual--score {
+  color: var(--Dark-gray-blue);
+}
+
+/* Button */
+.btn-continue {
+  padding: var(--space-ms);
+  border-radius: 500px;
+  border: none;
+  color: var(--White);
+  font-weight: var(--fw-bold);
+  background-color: var(--Dark-gray-blue);
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-continue:hover {
+  background-image: var(--blue-bg-gradient);
 }
